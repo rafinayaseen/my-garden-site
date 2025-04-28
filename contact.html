@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Meet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        /* Navbar Link Styling */
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+            margin-right: 15px;
+            /* Gap between links */
+            transition: color 0.3s ease-in-out;
+            padding: 15px;
+        }
+        /* Hover Effect */
+        
+        .navbar-nav .nav-link:hover {
+            color: #28a745 !important;
+            /* Green color on hover */
+        }
+        /* Dropdown Text Styling */
+        
+        .dropdown-menu .dropdown-item {
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .dropdown-menu {
+            border: none !important;
+            /* removes border */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            /* adds shadow */
+        }
+        /* Full Width Hero Section */
+        
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero .owl-carousel .item {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .hero .owl-carousel img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+        }
+        
+        .btn-green {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+        }
+        
+        .btn-green:hover {
+            background-color: #218838;
+        }
+        
+        .btn-outline-green {
+            border: 2px solid #28a745;
+            color: white;
+            padding: 10px 20px;
+        }
+        
+        .btn-outline-green:hover {
+            background-color: #28a745;
+            color: white;
+        }
+        /* Navbar Styling */
+        
+        .portfolio-nav {
+            background: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .portfolio-nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .portfolio-nav a:hover,
+        .portfolio-nav a.active {
+            color: green;
+        }
+        /* Image Grid */
+        
+        .portfolio-item {
+            display: none;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .portfolio-item.active {
+            display: block;
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 8px;
+        }
+        
+        .portfolio-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* footer section  start*/
+        
+        .footer {
+            background-image: url('images/escrap98.jpg');
+            /* apni image ka path dena */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .footer .social-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            margin-right: 10px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        .footer .social-icons a:hover {
+            background-color: green;
+        }
+        
+        .footer .footer-link a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+        
+        .footer .footer-link a:hover {
+            color: green;
+        }
+        
+        .footer .best-seller img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        
+        .footer .best-seller .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .footer .contact p {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase text-white" href="#">ALAZA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link fw-bold text-white text-uppercase" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-white text-uppercase" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fw-bold text-white text-uppercase dropdown-toggle" href="services.html" id="shopDropdown" role="button" data-bs-toggle="dropdown">
+                        Shop
+                    </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item fw-bold" href="plants.html">Plants</a></li>
+                            <li><a class="dropdown-item fw-bold" href="seeds.html">Seeds</a></li>
+                            <li><a class="dropdown-item fw-bold" href="tools.html">Tools</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-white text-uppercase" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-white text-uppercase" href="testimonial.html">Testimonial</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-white text-uppercase" href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container my-5 py-5 mt-5">
+        <h2 class="text-center mb-4 fw-bold">GET IN TOUCH</h2>
+        <p class="text-center mb-5">Send us a message, we will call back later</p>
+        <div class="row">
+
+            <!-- Left Column: Contact Form -->
+            <div class="col-md-6">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="col">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <a href="#" class="btn btn-primary">Send Message</a>
+                </form>
+            </div>
+
+            <!-- Right Column: Map -->
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13607.285384378932!2d74.3346062!3d31.5203696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904dd9ef122a7%3A0xc97f4526e65e36c6!2sLahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1616311269239!5m2!1sen!2s"
+                    width="100%" height="350" style="border:0; border-radius: 2px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- Column 1: Logo + Text + Social -->
+                <div class="col-md-3">
+                    <h4><a href="#" class="text-white text-decoration-none">MyLogo</a></h4>
+                    <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.google.com/" target="_blank"><i class="fab fa-google"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-3">
+                    <h5>QUICK LINK</h5>
+                    <div class="row footer-link">
+                        <div class="col-6">
+                            <a href="#">Purchase</a>
+                            <a href="#">FAQs</a>
+                            <a href="#">Payment</a>
+                            <a href="#">News</a>
+                            <a href="#">Return</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#">Advertise</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Career</a>
+                            <a href="#">Orders</a>
+                            <a href="#">Policities</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Best Seller -->
+                <div class="col-md-3">
+                    <h5>BEST SELLER</h5>
+                    <div class="best-seller">
+                        <div class="item">
+                            <a href="" class="text-decoration-none">
+                                <img src="images/escrap111.jpeg" alt=""></a>
+                            <div>
+                                <p class="mb-0">Cactus Flower</p>
+                                <small>$10.99</small>
+                            </div>
+                        </div>
+                        <div class="item">
+
+                            <a href="" class="text-decoration-none"> <img src="images/escrap113.jpeg" alt=""></a>
+                            <div>
+                                <p class="mb-0">Tulip Flower</p>
+                                <small>$11.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="col-md-3 contact">
+                    <h5>CONTACT</h5>
+                    <p><strong>Address:</strong> 505 Silk Rd, New York</p>
+                    <p><strong>Phone:</strong> +1 234 122 122</p>
+                    <p><strong>Email:</strong> info.deercreative@gmail.com</p>
+                    <p><strong>Open Hours:</strong> Mon - Sun: 8 AM to 9 PM</p>
+                    <p><strong>Happy Hours:</strong> Sat: 2 PM to 4 PM</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-white py-3">
+                © 2025 All rights reserved | This template is made with ❤️ by
+                <a href="https://colorlib.com " class="text-white text-decoration-none " target="_blank ">Colorlib</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel ").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                smartSpeed: 800,
+                dots: true
+            });
+        });
+        document.addEventListener("DOMContentLoaded ", function() {
+            const filters = document.querySelectorAll(".filter ");
+            const items = document.querySelectorAll(".portfolio-item ");
+
+            filters.forEach(filter => {
+                filter.addEventListener("click ", function(event) {
+                    event.preventDefault();
+
+                    filters.forEach(f => f.classList.remove("active "));
+                    this.classList.add("active ");
+
+                    let filterValue = this.getAttribute("data-filter ");
+
+                    items.forEach(item => {
+                        if (filterValue === "all ") {
+                            item.classList.add("active ");
+                        } else {
+                            item.classList.remove("active ");
+                            if (item.classList.contains(filterValue)) {
+                                item.classList.add("active ");
+                            }
+                        }
+                    });
+                });
+            });
+        });
+        $(document).ready(function() {
+            $(".owl-carousel ").owlCarousel({
+                items: 1,
+                margin: 20,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                smartSpeed: 800,
+                nav: true,
+                dots: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>
